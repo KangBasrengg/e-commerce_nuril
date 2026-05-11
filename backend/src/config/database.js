@@ -1,5 +1,7 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
+const pg = require('pg'); // Force Vercel to include pg module
+require('pg-hstore'); // Force Vercel to include pg-hstore module
 
 const useSSL = process.env.DB_SSL === 'true';
 
@@ -11,6 +13,7 @@ const sequelize = new Sequelize(
         host: process.env.DB_HOST || 'localhost',
         port: process.env.DB_PORT || 5432,
         dialect: 'postgres',
+        dialectModule: pg,
         logging: false,
         pool: {
             max: 5,
