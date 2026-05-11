@@ -1,0 +1,6 @@
+/* App.css — Minimal reset, layout handled by components */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
