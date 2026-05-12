@@ -43,7 +43,7 @@ const Cart = () => {
                         {cartItems.map((item, index) => (
                             <li
                                 key={item.product_id}
-                                className={`flex items-center justify-between p-5 ${index < cartItems.length - 1 ? 'border-b border-neutral-border' : ''}`}
+                                className={`flex flex-col sm:flex-row sm:items-center justify-between p-5 gap-4 ${index < cartItems.length - 1 ? 'border-b border-neutral-border' : ''}`}
                             >
                                 <div className="flex-1">
                                     <h3 className="text-base font-semibold text-text-primary">{item.name}</h3>
@@ -51,7 +51,7 @@ const Cart = () => {
                                         {formatRupiah(item.price)} × {item.quantity}
                                     </p>
                                 </div>
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center justify-between sm:justify-end gap-4 w-full sm:w-auto">
                                     <span className="text-base font-bold text-primary-600">
                                         {formatRupiah(Number(item.price) * item.quantity)}
                                     </span>
